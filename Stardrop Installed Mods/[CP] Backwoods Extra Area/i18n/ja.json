@@ -1,0 +1,13 @@
+{
+    "config.Enable this mod.name": "MODを有効にする",
+    "config.Enable this mod.description": "このMOD自体のOn/Off設定です。",
+
+    "config.Theft of the Winter Star ver.name": "Theft of the Winter Star に適応する",
+    "config.Theft of the Winter Star ver.description": "Theft of the Winter Star MOD 導入時にエレベーターの位置が被らない様に変更されます。",
+
+    "config.Stardew Valley Reimagined 3 ver.name": "Stardew Valley Reimagined 3 ver を適用する",
+    "config.Stardew Valley Reimagined 3 ver.description": "Stardew Valley Reimagined 3 MOD を使用して裏庭MAPを変更している場合に、このBBEAへの入り口を裏の森西に変更し、合わせてトンネルなどを修正します。",
+
+    "config.Repositioning of entrances.name": "出入口の位置を変更する",
+    "config.Repositioning of entrances.description": "チェックを入れると Extra Area への出入り口が右上へと変更されます。出入口が左下にあると他のMODに干渉する場合などに使用してください。",
+}

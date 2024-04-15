@@ -1,0 +1,13 @@
+{
+    "config.Enable this mod.name": "Enable this mod.",
+    "config.Enable this mod.description": "On/Off setting of this mod itself.",
+
+    "config.Theft of the Winter Star ver.name": "Theft of the Winter Star ver",
+    "config.Theft of the Winter Star ver.description": "The elevator position will be changed so that it is not covered when the Theft of the Winter Star MOD is installed.",
+
+    "config.Stardew Valley Reimagined 3 ver.name": "Stardew Valley Reimagined 3 ver",
+    "config.Stardew Valley Reimagined 3 ver.description": "If you are using the Stardew Valley Reimagined 3 MOD to modify the backyard MAP, change the entrance to this BBEA to the back woods west and modify the tunnels, etc. accordingly.",
+
+    "config.Repositioning of entrances.name": "Repositioning of entrances",
+    "config.Repositioning of entrances.description": "If checked, the entrance to the Extra Area will be changed to the upper right corner. Use this when the entrance/exit is in the lower left corner, for example, when it interferes with other mods.",
+}
