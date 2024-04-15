@@ -1,0 +1,165 @@
+{
+   "Format": "1.29.0",
+
+
+    "ConfigSchema": {
+    
+        "Enable this mod": { 
+            "AllowValues": "true,false" ,
+            "Default": "true" ,
+                },
+
+        "Theft of the Winter Star ver": { 
+            "AllowValues": "true,false" ,
+            "Default": "false" ,
+                },
+
+        "Stardew Valley Reimagined 3 ver": { 
+            "AllowValues": "true,false" ,
+            "Default": "false" ,
+                },
+
+        "Repositioning of entrances": { 
+            "AllowValues": "true,false" ,
+            "Default": "false" ,
+                },
+
+                         },
+
+   "CustomLocations": [
+     {
+         "Name": "Custom_Backwoodsextraarea",
+         "FromMapFile": "assets/Backwoodsextraarea.tmx",
+         "MigrateLegacyNames": [ "Backwoodsextraarea" ],
+     },
+     {
+         "Name": "Custom_Tunnel_West_BWEA",
+         "FromMapFile": "assets/Tunnel_West_BWEA.tbin",
+     },
+                        ],
+
+   "Changes": [
+
+       {// SVR3以外の裏庭編集
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+    "FromFile": "assets/Backwoods_BWEA.tmx",
+        "FromArea": { "X": 4, "Y": 24, "Width": 9, "Height": 10 },
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 4, "Y": 24, "Width": 9, "Height": 10 },
+    "When": { "Enable this mod": "true" ,
+                  "Stardew Valley Reimagined 3 ver": "false" ,
+                  "Repositioning of entrances": "false" },
+       },
+
+       {
+        "Action": "EditMap",
+        "Target": "Maps/Tunnel",
+    "FromFile": "assets/Tunnel_BWEA.tmx",
+        "FromArea": { "X": 6, "Y": 4, "Width": 3, "Height": 3 },
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 6, "Y": 4, "Width": 3, "Height": 3 },
+    "When": { "Enable this mod": "true" ,
+                  "Theft of the Winter Star ver": "false" ,
+                  "Stardew Valley Reimagined 3 ver": "false" ,
+                },
+       },
+
+
+       {
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Backwoodsextraarea",
+    "FromFile": "assets/Backwoodsextraarea_TWS.tmx",
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 5, "Y": 4, "Width": 1, "Height": 1 },
+    "When": { "Enable this mod": "true" ,
+                  "Theft of the Winter Star ver": "true" ,
+                },
+       },
+       {
+        "Action": "EditMap",
+        "Target": "Maps/Tunnel",
+    "FromFile": "assets/Tunnel_BWEA_TWS.tmx",
+        "FromArea": { "X": 11, "Y": 4, "Width": 3, "Height": 3 },
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 11, "Y": 4, "Width": 3, "Height": 3 },
+    "When": { "Enable this mod": "true" ,
+                  "Theft of the Winter Star ver": "true" ,
+                  "Stardew Valley Reimagined 3 ver": "false" ,
+                },
+       },
+
+// 以下、SVR3設定適応時の編集
+
+       {// SVR3 裏庭 西 編集
+        "Action": "EditMap",
+        "Target": "Maps/Custom_BackwoodsWest",
+    "FromFile": "assets/BackwoodsWest_BWEA.tbin",
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 1, "Y": 13, "Width": 5, "Height": 8 },
+    "When": { "Enable this mod": "true",
+                  "Stardew Valley Reimagined 3 ver": "true",
+                  "Repositioning of entrances": "false",
+                  "HasMod: |contains=DaisyNiko.SVR3": true ,
+                },
+       },
+
+       {// SVR3 トンネルへのワープ追加
+        "Action": "EditMap",
+        "Target": "Maps/Custom_BackwoodsWest",
+        "TextOperations": [
+            {
+             "Operation": "Append",
+             "Target": ["MapProperties", "Warp"],
+             "Value": "16 29 Custom_Tunnel_West_BWEA 39 9 16 30 Custom_Tunnel_West_BWEA 39 9 16 31 Custom_Tunnel_West_BWEA 39 9",
+             "Delimiter": " ",
+            },
+                       ],
+    "When": { "Enable this mod": "true",
+                  "Stardew Valley Reimagined 3 ver": "true",
+                  "Repositioning of entrances": "false",
+                  "HasMod: |contains=DaisyNiko.SVR3": true ,
+                },
+       },
+
+       {// SVR3 BWEAの上書き
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Backwoodsextraarea",
+    "FromFile": "assets/Backwoodsextraarea_SVR3.tbin",
+    "PatchMode": "ReplaceByLayer",
+    "When": { "Enable this mod": "true",
+                  "Stardew Valley Reimagined 3 ver": "true",
+                  "Repositioning of entrances": "false",
+                  "HasMod: |contains=DaisyNiko.SVR3": true ,
+                },
+       },
+
+
+// 以下、Stardew Realty設定適応時の編集
+
+       {// Stardew Realty 洞窟への入り口の上書き(BWの編集)
+        "Action": "EditMap",
+        "Target": "Maps/Backwoods",
+    "FromFile": "assets/Backwoods_BWEA_SVR.tmx",
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 39, "Y": 5, "Width": 5, "Height": 8 },
+    "When": { "Enable this mod": "true",
+                  "Stardew Valley Reimagined 3 ver": "false",
+                  "Repositioning of entrances": "true",
+                },
+       },
+       {// Stardew Realty 洞窟からBWへの出口の上書き
+        "Action": "EditMap",
+        "Target": "Maps/Custom_Backwoodsextraarea",
+    "FromFile": "assets/Backwoodsextraarea_SVR.tmx",
+    "PatchMode": "ReplaceByLayer",
+        "ToArea": { "X": 27, "Y": 9, "Width": 1, "Height": 3 },
+    "When": { "Enable this mod": "true",
+                  "Stardew Valley Reimagined 3 ver": "false",
+                  "Repositioning of entrances": "true",
+                },
+       },
+
+ ]
+
+}
